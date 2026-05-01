@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reservation-system
+  labels:
+    app: reservation-system
+spec:
+  type: LoadBalancer
+  selector:
+    app: reservation-system
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8081
+    name: http
